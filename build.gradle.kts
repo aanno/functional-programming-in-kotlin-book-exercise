@@ -3,7 +3,7 @@ import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 group = "org.example"
 version = "1.0-SNAPSHOT"
 description = "functional-programming-in-kotlin-book-exercises"
-java.sourceCompatibility = JavaVersion.VERSION_1_8
+java.sourceCompatibility = JavaVersion.VERSION_17
 
 plugins {
     java
@@ -50,18 +50,25 @@ tasks.withType<JavaCompile> {
 
 tasks.withType<KotlinCompile>().configureEach {
     kotlinOptions {
-        jvmTarget = "1.8"
+        jvmTarget = "17"
     }
 }
 
-tasks.test {
-    useJUnitPlatform()
-
-    testLogging {
-        events("passed", "skipped", "failed")
+tasks {
+    wrapper {
+        gradleVersion = "8.5"
+        distributionType = Wrapper.DistributionType.ALL
     }
 
-    reports {
-        html.required.set(true)
+    test {
+        useJUnitPlatform()
+
+        testLogging {
+            events("passed", "skipped", "failed")
+        }
+
+        reports {
+            html.required.set(true)
+        }
     }
 }

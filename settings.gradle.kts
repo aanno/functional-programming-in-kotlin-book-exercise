@@ -5,10 +5,10 @@ pluginManagement {
     repositories {
         // gradlePluginPortal()
         maven {
-            url = uri(mavenUrl1!!)
+            url = uri(mavenUrl1)
         }
         maven {
-            url = uri(mavenUrl2!!)
+            url = uri(mavenUrl2)
         }
     }
 
