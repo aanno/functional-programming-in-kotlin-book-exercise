@@ -8,12 +8,21 @@ java.sourceCompatibility = JavaVersion.VERSION_1_8
 plugins {
     java
     idea
-    id("org.jetbrains.kotlin.jvm") version "1.6.0"
+    id("org.jetbrains.kotlin.jvm")
 }
 
+val mavenUrl1 by properties
+val mavenUrl2 by properties
+
 repositories {
-    mavenLocal()
-    mavenCentral()
+    // mavenLocal()
+    // mavenCentral()
+    maven {
+        url = uri(mavenUrl1!!)
+    }
+    maven {
+        url = uri(mavenUrl2!!)
+    }
 }
 
 val arrowVersion = "0.11.0"
