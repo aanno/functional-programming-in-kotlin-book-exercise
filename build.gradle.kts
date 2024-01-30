@@ -25,9 +25,9 @@ repositories {
     }
 }
 
-val arrowVersion = "0.11.0"
-val junitVersion = "5.8.2"
-val kotestVersion = "5.1.0"
+val arrowVersion by properties
+val junitVersion by properties
+val kotestVersion by properties
 
 dependencies {
     implementation("io.arrow-kt:arrow-core:$arrowVersion")
