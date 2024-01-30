@@ -29,6 +29,13 @@ val arrowVersion by properties
 val junitVersion by properties
 val kotestVersion by properties
 
+idea {
+    module {
+        setDownloadJavadoc(true)
+        setDownloadSources(true)
+    }
+}
+
 dependencies {
     implementation("io.arrow-kt:arrow-core:$arrowVersion")
     implementation("io.arrow-kt:arrow-core-data:$arrowVersion")
